@@ -1,5 +1,5 @@
 import java.awt.Rectangle;
-public class GrowSquarePrinter
+public class growSquarePrinter
 {
 	public static void main(String[] args)
 	{

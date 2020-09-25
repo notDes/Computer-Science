@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.awt.Rectangle;
 
-public class rectangleClassv1 {
+public class rectangleClassV1 {
     
     public static void main(String[] args) {
 

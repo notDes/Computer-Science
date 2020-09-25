@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class KingsIsland
+public class kingsIsland
 {
 	public static void main(String[] args)
 	{

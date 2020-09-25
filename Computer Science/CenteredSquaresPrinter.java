@@ -1,5 +1,5 @@
 import java.awt.Rectangle;
-public class CenteredSquaresPrinter
+public class centeredSquaresPrinter
 {
 	public static void main(String[] args)
 	{
