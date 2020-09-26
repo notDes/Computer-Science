@@ -5,42 +5,43 @@ class Main {
     System.out.println("R2.9");
     
     String str = "Hello";
-    
-    String helloToLowerCase = str.toLowerCase();
-
-    System.out.println(helloToLowerCase);
-  
-    
-    System.out.println("R2.10");
-    
     String helloToUpperCase = str.toUpperCase();
 
     System.out.println(helloToUpperCase);
     
     
+    System.out.println("R2.10");
+    
+
+    String helloToLowerCase = str.toLowerCase();
+
+    System.out.println(helloToLowerCase);
+    
     System.out.println("E2.3");
     
     String strMississippi = "Mississippi";
     
-    String newMississippi = strMississippi.replace("i", "ii");
+    strMississippi = strMississippi.replace("i", "ii");
     
-    System.out.println(newMississippi.length());
+    System.out.println(strMississippi.length());
     
-    String newMississippi2 = strMississippi.replace("ss", "s");
+    strMississippi = strMississippi.replace("ss", "s");
     
-    System.out.println(newMississippi2.length());
+    // System.out.println(newMississippi); Testing 
+    
+    System.out.println(strMississippi.length());
     
     
     System.out.println("E2.8");
     
+    String strDesserts = "desserts";
     
     // System.out.println(strDesserts.reverse().toString());
-
-    StringBuilder desserts = new StringBuilder("desserts");
-
-    System.out.println(desserts.toString());
-
     
+    StringBuilder desserts = new StringBuilder("desserts");
+    desserts = desserts.reverse();
+    
+    System.out.println(desserts.toString());
     
     
     
