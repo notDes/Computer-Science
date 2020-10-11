@@ -1,4 +1,5 @@
-public class ShoesTester {
+
+public class shoesTester {
   public static void main(String[] args)
   {
     Shoes fav = new Shoes();

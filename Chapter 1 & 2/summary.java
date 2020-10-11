@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import java.util.Random; 
 
-public class Summary {
+public class summary {
     
 	public static void main(String[] args)
 	{
@@ -45,7 +45,7 @@ public class Summary {
 
 		// 7) Pick a random HS year. Generate and print a random integer between 9 and 12, inclusive.
 		Random rand2 = new Random();
-		int randomYear = rand2.nextInt(3) + 9;
+		int randomYear = rand2.nextInt(4) + 9;
 		System.out.println("Your HS year was..." + randomYear);
 
 

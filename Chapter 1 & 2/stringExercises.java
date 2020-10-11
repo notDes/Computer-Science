@@ -1,6 +1,6 @@
 import java.lang.StringBuilder;
 
-class Main {
+class stringExcerises {
   public static void main(String[] args) {
     System.out.println("R2.9");
     

@@ -1,7 +1,7 @@
 import java.util.Scanner;  
 
 
-public class Main {
+public class methodMadness {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
@@ -40,6 +40,7 @@ public class Main {
 
       String Correct = "Correct!";
       String Incorrect = "Wrong!";
+      String correctAnswersString = "The correct answer is...";
 
         System.out.print("Enter your name:");
         String name = input.next();
@@ -59,7 +60,7 @@ public class Main {
         }else{
           int realAnswer = firstNumber + secondNumber;
           System.out.println(Incorrect);
-          System.out.println("The correct answer is " + realAnswer);
+          System.out.println(correctAnswersString + realAnswer);
         }
         // MULITPLICATION
         System.out.print(firstNumber + " * " + secondNumber + ":"); 
@@ -73,7 +74,7 @@ public class Main {
         }else{
         int realAnswer = firstNumber * secondNumber;
           System.out.println(Incorrect);
-          System.out.println("The correct answer is " + realAnswer);
+          System.out.println(correctAnswersString+ realAnswer);
 
         }
         // DIVISION
@@ -88,7 +89,7 @@ public class Main {
         }else{
           int realAnswer = firstNumber / secondNumber;
           System.out.println(Incorrect);
-          System.out.println("The correct answer is " + realAnswer);
+          System.out.println(correctAnswersString + realAnswer);
         }
 
         // PERCENT
@@ -104,7 +105,7 @@ public class Main {
         }else{
           int realAnswer = firstNumber % secondNumber;
           System.out.println(Incorrect);
-          System.out.println("The correct answer is " + realAnswer);
+          System.out.println(correctAnswersString + realAnswer);
         }
 
 
