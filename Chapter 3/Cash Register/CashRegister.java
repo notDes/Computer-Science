@@ -7,7 +7,8 @@ public class CashRegister
   private int numberOfItems;
   private double runningTotal;
   private double taxRate;
-  private double totalTax;
+  private double purchase;
+
 
 
   
@@ -51,7 +52,8 @@ public class CashRegister
   */
   public void recordTaxablePurchase(double amount)
   {
-    totalTax = totalTax + amount + (amount*(taxRate / 100));
+    runningTotal = amount + (amount * taxRate);
+    numberOfItems++;
   }
   
   
@@ -62,6 +64,7 @@ public class CashRegister
   */
   public void receivePayment(double amount)
   {
+    purchase = purchase + amount;
   }
   
   
@@ -72,6 +75,11 @@ public class CashRegister
   */
   public double giveChange()
   {
+    double change = purchase - runningTotal;
+    numberOfItems = 0;
+    runningTotal = 0;
+    purchase = 0;
+    return change;
   }
   
   
@@ -95,5 +103,6 @@ public class CashRegister
   */
   private double getItemTax(double itemAmount)
   {
-  }
+    return itemAmount * taxRate;
+  }   
 }
