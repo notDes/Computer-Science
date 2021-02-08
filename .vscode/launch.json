@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayManipulation",
+            "request": "launch",
+            "mainClass": "SecondSemester.ArrayManipulation",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PalindromeChecker",
+            "request": "launch",
+            "mainClass": "SecondSemester.PalindromeChecker",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiplicationTable",
+            "request": "launch",
+            "mainClass": "SecondSemester.MultiplicationTable",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrimePrinter",
+            "request": "launch",
+            "mainClass": "SecondSemester.PrimePrinter",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForLoops",
+            "request": "launch",
+            "mainClass": "SecondSemester.ForLoops",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
             "name": "Launch testing",
             "request": "launch",
             "mainClass": "testing",
