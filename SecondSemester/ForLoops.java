@@ -1,9 +1,6 @@
 package SecondSemester;
 
 import java.util.Scanner;
-
-import javax.swing.text.Position;
-
 public class ForLoops {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

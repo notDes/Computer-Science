@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PokerDice",
+            "request": "launch",
+            "mainClass": "SecondSemester.PokerDice",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
+            "name": "Launch FORFUN",
+            "request": "launch",
+            "mainClass": "SecondSemester.FORFUN",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
+            "name": "Launch PizzaToppings",
+            "request": "launch",
+            "mainClass": "SecondSemester.PizzaToppings",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
+            "name": "Launch PalindromeChecker",
+            "request": "launch",
+            "mainClass": "SecondSemester.PalindromeChecker",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
             "name": "Launch ArrayManipulation",
             "request": "launch",
             "mainClass": "SecondSemester.ArrayManipulation",
