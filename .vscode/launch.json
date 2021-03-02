@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EvalCoin",
+            "request": "launch",
+            "mainClass": "EvalCoin",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
+            "name": "Launch eval",
+            "request": "launch",
+            "mainClass": "eval",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForEach",
+            "request": "launch",
+            "mainClass": "SecondSemester.ForEach",
+            "projectName": "Computer-Science_e02892b4"
+        },
+        {
+            "type": "java",
             "name": "Launch PokerDice",
             "request": "launch",
             "mainClass": "SecondSemester.PokerDice",
