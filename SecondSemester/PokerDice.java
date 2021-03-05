@@ -25,10 +25,9 @@ import java.util.Random;
 
 
 public class PokerDice {
+
     public static void main(String[] args) {
         int[] dice = new int[5];
-
-
     }
 
     private static void resetDice(int[] dice) {
@@ -79,9 +78,10 @@ public class PokerDice {
 
     private static boolean promptForPlayAgain(Scanner inScanner) {
         boolean playAgain;
-        
+
         while (true) {
             System.out.print("Would you like to play again [Y/N]?: ");
+
             String userInput = inScanner.nextLine();
             if (userInput == "y" || userInput == "Y") {
                 playAgain = true;
@@ -91,10 +91,11 @@ public class PokerDice {
                 playAgain = false;
                 break;
 
-            } else{
+            } else {
                 System.out.print("ERROR! Only 'Y' or 'N' allowed as input!");
             }
-        }return playAgain;
+        }
+        return playAgain;
     }
 
     // Given an array of integers, determines the result as a hand of Poker Dice.  The
@@ -116,8 +117,59 @@ public class PokerDice {
     //  EXTRA CHALLENGE: Include in your scoring a Straight, which is 5 numbers in sequence
     //		[1,2,3,4,5] or [2,3,4,5,6] or [3,4,5,6,7] etc..
     private static String getResult(int[] dice) {
-        int five, four, fullHouse, three, twoPair, onePair, highestValue;
-        
+        String result = "";
+        int fiveKind, fourKind, fullHouse, threeKind, twoPair, onePair, highestValue;
+        fiveKind = 0;
+        fourKind = 0;
+        fullHouse = 0;
+        threeKind = 0;
+        twoPair = 0;
+        onePair = 0;
+        highestValue = 0;
+
+        int[] hand = getCounts(dice);
+
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i] == 2) {
+                twoPair++;
+
+            }
+            if (twoPair == 1) {
+                result = "One pair!";
+
+            } else if (twoPair == 2) {
+                result = "Two pair!";
+            }
+
+            if (hand[i] == 3) {
+                threeKind++;
+
+            }
+            if (threeKind == 1) {
+                result = "Three of a kind!";
+
+            } else if (threeKind == 1 && twoPair == 1) {
+                result = "Full house!";
+            }
+            if (hand[i] == 4) {
+                result = "Four of a kind!";
+
+            } else if (hand[i] == 5) {
+                result = "Five of a kind!";
+
+            }
+
+        }
+        if (result == "") {
+            for (int i = 0; i < dice.length; i++) {
+                if (dice[i] > highestValue) {
+                    highestValue = dice[i];
+                }
+            }
+            result = "Highest Card " + highestValue;
+        }
+
+        return result;
     }
 
     // Given an array of integers as input, return back an array with the counts of the
@@ -131,10 +183,42 @@ public class PokerDice {
     // HINT:  This method is very useful for determining the score of a particular hand
     //  of poker dice.  Use it as a helper method for the getResult() method above.
     private static int[] getCounts(int[] dice) {
-        // Fill in the body
+        int firstOutcome = 0;
+        int secondOutcome = 0;
+        int thirdOutcome = 0;
+        int fourthOutcome = 0;
+        int fifthOutcome = 0;
+        int sixthOutcome = 0;
+
+        int[] count = new int[6];
+
+        for (int i = 0; i < count.length; i++) {
+            count[i] = 0;
+        }
+
+        for (int i = 0; i < dice.length; i++) {
+            if (dice[i] == 1) {
+                firstOutcome++;
+            } else if (dice[i] == 2) {
+                secondOutcome++;
+            } else if (dice[i] == 3) {
+                thirdOutcome++;
+            } else if (dice[i] == 4) {
+                fourthOutcome++;
+            } else if (dice[i] == 5) {
+                fifthOutcome++;
+            } else if (dice[i] == 6) {
+                sixthOutcome++;
+            }
+
+        }
+        count[0] = firstOutcome;
+        count[1] = secondOutcome;
+        count[2] = thirdOutcome;
+        count[3] = fourthOutcome;
+        count[4] = fifthOutcome;
+        count[5] = sixthOutcome;
+
+        return count;
     }
-
-
-
-
 }

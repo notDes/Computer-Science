@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PokerDice",
+            "request": "launch",
+            "mainClass": "SecondSemester.PokerDice",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PizzaToppings",
+            "request": "launch",
+            "mainClass": "SecondSemester.PizzaToppings",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
             "name": "Launch EvalCoin",
             "request": "launch",
             "mainClass": "EvalCoin",
