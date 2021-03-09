@@ -1,4 +1,5 @@
 package SecondSemester;
+
 /*
  * PokerDice.java
  * 
@@ -27,18 +28,35 @@ import java.util.Random;
 public class PokerDice {
 
     public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
         int[] dice = new int[5];
+        resetDice(dice);
+        rollDice(dice);
+        promptForReroll(dice, inScanner);
+        System.out.println(getResult(dice));
+        Scanner input = new Scanner(System.in);
+
+        while (promptForPlayAgain(input)) {
+            resetDice(dice);
+            rollDice(dice);
+            System.out.println("");
+            promptForReroll(dice, inScanner);
+            System.out.println(getResult(dice));
+        }
+        System.out.println("");
+        System.out.println("Goodbye!");
+
     }
 
     private static void resetDice(int[] dice) {
-        for (int i = 0; i <= dice.length; i++) {
+        for (int i = 0; i < dice.length; i++) {
             dice[i] = 0;
         }
     }
 
     private static void rollDice(int[] dice) {
         Random rand = new Random();
-        for (int i = 0; i <= dice.length; i++) {
+        for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 0) {
                 dice[i] = rand.nextInt(10 - 1 + 1) + 1;
             }
@@ -53,14 +71,14 @@ public class PokerDice {
         return diceString;
     }
     private static void promptForReroll(int[] dice, Scanner inScanner) {
-        System.out.print("Current Array of Dice" + diceToString(dice));
+        System.out.println("Current Array of Dice" + diceToString(dice));
         System.out.println("Which die should be re-rolled?");
 
         int userInput = inScanner.nextInt();
 
-        while (userInput != 1) {
+        while (userInput != -1) {
 
-            if (userInput < dice.length && userInput < -1) {
+            if (userInput > dice.length && userInput < -1) {
                 dice[userInput] = 0;
                 System.out.println("Your current dice: " + diceToString(dice));
                 System.out.print("Select a die to re-roll ");
@@ -118,13 +136,9 @@ public class PokerDice {
     //		[1,2,3,4,5] or [2,3,4,5,6] or [3,4,5,6,7] etc..
     private static String getResult(int[] dice) {
         String result = "";
-        int fiveKind, fourKind, fullHouse, threeKind, twoPair, onePair, highestValue;
-        fiveKind = 0;
-        fourKind = 0;
-        fullHouse = 0;
+        int threeKind, twoPair, highestValue;
         threeKind = 0;
         twoPair = 0;
-        onePair = 0;
         highestValue = 0;
 
         int[] hand = getCounts(dice);
