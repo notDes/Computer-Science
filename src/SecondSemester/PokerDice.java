@@ -1,4 +1,4 @@
-package SecondSemester;
+// package src.SecondSemester;
 
 /*
  * PokerDice.java
@@ -24,26 +24,28 @@ package SecondSemester;
 import java.util.Scanner;
 import java.util.Random;
 
-
 public class PokerDice {
 
     public static void main(String[] args) {
-        Scanner inScanner = new Scanner(System.in);
-        int[] dice = new int[5];
-        resetDice(dice);
-        rollDice(dice);
-        promptForReroll(dice, inScanner);
-        System.out.println(getResult(dice));
         Scanner input = new Scanner(System.in);
 
-        while (promptForPlayAgain(input)) {
-            resetDice(dice);
+        int[] dice = new int[5];
+        boolean flag = true;
+
+        while (flag) {
             rollDice(dice);
-            System.out.println("");
-            promptForReroll(dice, inScanner);
+            promptForReroll(dice, input);
+
+            System.out.println("Keeping remaining dice...");
+            System.out.println("Rerolling");
+
+            rollDice(dice);
+            System.out.println("Your final dice: " + diceToString(dice));
             System.out.println(getResult(dice));
+
+            flag = promptForPlayAgain(input);
+            resetDice(dice);
         }
-        System.out.println("");
         System.out.println("Goodbye!");
 
     }
@@ -66,34 +68,29 @@ public class PokerDice {
     private static String diceToString(int[] dice) {
         String diceString = "";
         for (int i = 0; i < dice.length; i++) {
-            diceString = "" + dice[i] + "";
+            diceString = diceString + dice[i] + " ";
         }
         return diceString;
     }
+
     private static void promptForReroll(int[] dice, Scanner inScanner) {
-        System.out.println("Current Array of Dice" + diceToString(dice));
-        System.out.println("Which die should be re-rolled?");
+        int index;
 
-        int userInput = inScanner.nextInt();
+        boolean flag = true;
 
-        while (userInput != -1) {
+        while (flag) {
+            System.out.println("Your current dice: " + diceToString(dice));
+            System.out.print("Select a die to re-roll (-1 to keep remaining dice): ");
 
-            if (userInput > dice.length && userInput < -1) {
-                dice[userInput] = 0;
-                System.out.println("Your current dice: " + diceToString(dice));
-                System.out.print("Select a die to re-roll ");
-            } else {
-                System.out.println("Error: Index must be between 0 and 4 (-1 to quit)!");
-                System.out.print("Select a die to re-roll ");
+            index = inScanner.nextInt();
+            if (index == -1) {
+                flag = false;
+                break;
+            } else if (index < dice.length && index >= 0) {
+                dice[index] = 0;
             }
         }
-
-        System.out.println("Keeping remaining dice...");
-        System.out.println("Rerolling...");
-        rollDice(dice);
-        System.out.println("Your final dice: " + diceToString(dice));
     }
-
     private static boolean promptForPlayAgain(Scanner inScanner) {
         boolean playAgain;
 
@@ -101,39 +98,46 @@ public class PokerDice {
             System.out.print("Would you like to play again [Y/N]?: ");
 
             String userInput = inScanner.nextLine();
-            if (userInput == "y" || userInput == "Y") {
+            if (userInput.equalsIgnoreCase("y")) {
                 playAgain = true;
                 break;
 
-            } else if (userInput == "n" || userInput == "N") {
+            } else if (userInput.equalsIgnoreCase("n")) {
                 playAgain = false;
                 break;
 
-            } else {
-                System.out.print("ERROR! Only 'Y' or 'N' allowed as input!");
+            }
+            if( userInput != userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("n")){
+                System.out.println("ERROR! Only 'Y' or 'N' allowed as input!")
             }
         }
         return playAgain;
     }
 
-    // Given an array of integers, determines the result as a hand of Poker Dice.  The
+    // Given an array of integers, determines the result as a hand of Poker Dice.
+    // The
     // result is determined as:
-    //	* Five of a kind - all five integers in the array have the same value
-    //	* Four of a kind - four of the five integers in the array have the same value
-    //	* Full House - three integers in the array have the same value, and the remaining two
-    //					integers have the same value as well (Three of a kind and a pair)
-    //	* Three of a kind - three integers in the array have the same value
-    //	* Two pair - two integers in the array have the same value, and two other integers
-    //					in the array have the same value
-    //	* One pair - two integers in the array have the same value
-    //	* Highest value - if none of the above hold true, the Highest Value in the array
-    //						is used to determine the result
+    // * Five of a kind - all five integers in the array have the same value
+    // * Four of a kind - four of the five integers in the array have the same value
+    // * Full House - three integers in the array have the same value, and the
+    // remaining two
+    // integers have the same value as well (Three of a kind and a pair)
+    // * Three of a kind - three integers in the array have the same value
+    // * Two pair - two integers in the array have the same value, and two other
+    // integers
+    // in the array have the same value
+    // * One pair - two integers in the array have the same value
+    // * Highest value - if none of the above hold true, the Highest Value in the
+    // array
+    // is used to determine the result
     //
-    //	The method should evaluate the array and return back to the calling program a String
-    //  containing the score from the array of dice.
+    // The method should evaluate the array and return back to the calling program a
+    // String
+    // containing the score from the array of dice.
     //
-    //  EXTRA CHALLENGE: Include in your scoring a Straight, which is 5 numbers in sequence
-    //		[1,2,3,4,5] or [2,3,4,5,6] or [3,4,5,6,7] etc..
+    // EXTRA CHALLENGE: Include in your scoring a Straight, which is 5 numbers in
+    // sequence
+    // [1,2,3,4,5] or [2,3,4,5,6] or [3,4,5,6,7] etc..
     private static String getResult(int[] dice) {
         String result = "";
         int threeKind, twoPair, highestValue;
@@ -186,16 +190,21 @@ public class PokerDice {
         return result;
     }
 
-    // Given an array of integers as input, return back an array with the counts of the
-    // individual values in it.  You may assume that all elements in the array will have 
-    // a value between 1 and 10.  For example, if the array passed into the method were:
-    //   [1, 2, 3, 3, 7]
+    // Given an array of integers as input, return back an array with the counts of
+    // the
+    // individual values in it. You may assume that all elements in the array will
+    // have
+    // a value between 1 and 10. For example, if the array passed into the method
+    // were:
+    // [1, 2, 3, 3, 7]
     // Then the array of counts returned back by this method would be:
     // [1, 1, 2, 0, 0, 0, 1, 0, 0, 0]
-    // (Where index 0 holds the counts of the value 1, index 1 holds the counts of the value
-    //  2, index 2 holds the counts of the value 3, etc.)
-    // HINT:  This method is very useful for determining the score of a particular hand
-    //  of poker dice.  Use it as a helper method for the getResult() method above.
+    // (Where index 0 holds the counts of the value 1, index 1 holds the counts of
+    // the value
+    // 2, index 2 holds the counts of the value 3, etc.)
+    // HINT: This method is very useful for determining the score of a particular
+    // hand
+    // of poker dice. Use it as a helper method for the getResult() method above.
     private static int[] getCounts(int[] dice) {
         int firstOutcome = 0;
         int secondOutcome = 0;
