@@ -24,10 +24,11 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class PokerDice {
+public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Scanner playAgain = new Scanner(System.in);
 
         int[] dice = new int[5];
         boolean flag = true;
@@ -43,7 +44,7 @@ public class PokerDice {
             System.out.println("Your final dice: " + diceToString(dice));
             System.out.println(getResult(dice));
 
-            flag = promptForPlayAgain(input);
+            flag = promptForPlayAgain(playAgain);
             resetDice(dice);
         }
         System.out.println("Goodbye!");
@@ -60,7 +61,7 @@ public class PokerDice {
         Random rand = new Random();
         for (int i = 0; i < dice.length; i++) {
             if (dice[i] == 0) {
-                dice[i] = rand.nextInt(10 - 1 + 1) + 1;
+                dice[i] = rand.nextInt(6 - 1 + 1) + 1;
             }
         }
     }
@@ -106,9 +107,8 @@ public class PokerDice {
                 playAgain = false;
                 break;
 
-            }
-            if( userInput != userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("n")){
-                System.out.println("ERROR! Only 'Y' or 'N' allowed as input!")
+            } else {
+                System.out.println("ERROR! Only 'Y' or 'N' allowed as input!");
             }
         }
         return playAgain;
@@ -166,7 +166,7 @@ public class PokerDice {
             if (threeKind == 1) {
                 result = "Three of a kind!";
 
-            } else if (threeKind == 1 && twoPair == 1) {
+            }if (threeKind == 1 && twoPair == 1) {
                 result = "Full house!";
             }
             if (hand[i] == 4) {

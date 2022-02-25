@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch KillMe",
+            "request": "launch",
+            "mainClass": "src.Classes.KillMe",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch input",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.input",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListReview",
+            "request": "launch",
+            "mainClass": "ArrayListReview",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch CheckerBoard",
+            "request": "launch",
+            "mainClass": "CheckerBoard",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch RobotTester",
+            "request": "launch",
+            "mainClass": "src.Classes.RobotTester",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayListReview",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.ArrayListReview",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayManipulation",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.ArrayManipulation",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch EvalCoin",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.EvalCoin",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForEach",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.ForEach",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForLoops",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.ForLoops",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.Main",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PalindromeChecker",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.PalindromeChecker",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PizzaToppings",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.PizzaToppings",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrimePrinter",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.PrimePrinter",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch WhileLoops",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.WhileLoops",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordLists",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.WordLists",
+            "projectName": "Computer-Science_5fbdb676"
+        },
+        {
+            "type": "java",
+            "name": "Launch tester",
+            "request": "launch",
+            "mainClass": "src.SecondSemester.tester",
+            "projectName": "Computer-Science_5fbdb676"
+        }
+    ]
+}
